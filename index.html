@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cayola Store</title>
+  <link rel="icon" href="asset/cayolaicon.png" type="image/png"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Animasi Fade-in dan Slide-up yang lebih halus */
+    @keyframes fadeInWelcome {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navbar dengan latar belakang putih dan shadow saat scroll */
+    .navbar {
+      background-color: white;
+      transition: background-color 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Animasi Hover pada Produk */
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 3D Hover Effects pada Produk */
+    .product-card-3d {
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .product-card-3d:hover {
+      transform: rotateY(10deg) rotateX(10deg);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Customize Background & Text Color */
+    .bg-primary {
+      background-color: #A9D6F7; /* Biru Muda */
+    }
+
+    .text-primary {
+      color: #FFB6C1; /* Pink Muda */
+    }
+
+    .btn-primary {
+      background-color: #FFB6C1; /* Pink */
+    }
+
+    .btn-primary:hover {
+      background-color: #A9D6F7; /* Hover ke Biru Muda */
+    }
+
+    .tag-box {
+      display: inline-block;
+      background-color: #FFB6C1;
+      padding: 2px 6px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+
+    /* Styling Footer Social Media Icons */
+    .footer-social-icons a {
+      margin-right: 15px;
+      padding: 12px;
+      border-radius: 50%;
+      background-color: #FFB6C1;
+      color: white;
+      font-size: 24px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-social-icons a:hover {
+      background-color: #A9D6F7;
+      transform: scale(1.1); /* Enlarge icon on hover */
+    }
+
+    /* Styling for Contact Section */
+    #kontak {
+      background-color: #A9D6F7; /* Light Blue Background for Contact */
+      color: white;
+    }
+
+    #kontak h3 {
+      color: #FFB6C1; /* Light Pink for Heading */
+    }
+
+    /* Styling untuk Google Maps */
+    .map-container {
+      height: 450px;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar Fixed dan Animasi saat Scroll -->
+  <header class="navbar text-white py-4 fixed w-full top-0 left-0 z-50 transition-all duration-300">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <a href="#" class="text-3xl font-semibold text-black"><img src="asset/cayola.png" alt="CAYOLA" class="h-10"></a>
+      <nav>
+        <ul class="flex space-x-8">
+          <li><a href="#produk" class="text-pink-600 hover:text-blue-500 transition duration-300">Produk</a></li>
+          <li><a href="kontak.html" class="text-pink-600 hover:text-blue-500 transition duration-300">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Katalog Produk -->
+  <section id="produk" class="py-20 mt-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold text-gray-800 mb-12 scroll-animate">Preloved, Stylish, and Full of Stories</h2>
+
+      <!-- Grid Katalog Produk -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+
+        <!-- Produk 1 -->
+        <div class="group product-card product-card-3d bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl scroll-animate">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq6_XjDQ1v12NIHxHdjmmML3FKadWVQ6sqFQ&s" alt="Produk 1" class="w-full h-72 object-cover group-hover:opacity-80 transition duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Produk 1</h3>
+            <div class="flex flex-wrap">
+              <span class="tag-box">Merk: ABC</span>
+              <span class="tag-box">Size: M</span>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-lg font-semibold text-pink-600">Rp 150.000</span>
+              <a href="https://wa.me/+6282172294138?text=CO%20Produk%201" target="_blank" class="px-4 py-2 btn-primary text-white rounded-full transition duration-300 group-hover:bg-pink-500 hover:scale-105">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="group product-card product-card-3d bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl scroll-animate">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq6_XjDQ1v12NIHxHdjmmML3FKadWVQ6sqFQ&s" alt="Produk 2" class="w-full h-72 object-cover group-hover:opacity-80 transition duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Produk 2</h3>
+            <div class="flex flex-wrap">
+              <span class="tag-box">Merk: XYZ</span>
+              <span class="tag-box">Size: L</span>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-lg font-semibold text-pink-600">Rp 200.000</span>
+              <a href="https://wa.me/+6282172294138?text=CO%20Produk%202" target="_blank" class="px-4 py-2 btn-primary text-white rounded-full transition duration-300 group-hover:bg-pink-500 hover:scale-105">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="group product-card product-card-3d bg-white shadow-lg rounded-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl scroll-animate">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq6_XjDQ1v12NIHxHdjmmML3FKadWVQ6sqFQ&s" alt="Produk 3" class="w-full h-72 object-cover group-hover:opacity-80 transition duration-300">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Produk 3</h3>
+            <div class="flex flex-wrap">
+              <span class="tag-box">Merk: DEF</span>
+              <span class="tag-box">Size: S</span>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-lg font-semibold text-pink-600">Rp 250.000</span>
+              <a href="https://wa.me/+6282172294138?text=CO%20Produk%203" target="_blank" class="px-4 py-2 btn-primary text-white rounded-full transition duration-300 group-hover:bg-pink-500 hover:scale-105">
+                Beli Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat Products 4 to 20 (total 20 products) -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Cayola Store. Semua Hak Cipta Dilindungi.</p>
+      <div class="footer-social-icons flex justify-center mt-4">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/0821722294138" target="_blank" class="text-white hover:text-pink-500 rounded-full p-3 transition duration-300">
+          <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/cayolaapreloved/" target="_blank" class="text-white hover:text-pink-500 rounded-full p-3 transition duration-300">
+          <i class="fab fa-instagram text-3xl"></i>
+        </a>
+        <!-- Shopee -->
+        <a href="https://shopee.co.id/yourshop" target="_blank" class="text-white hover:text-pink-500 rounded-full p-3 transition duration-300">
+          <i class="fab fa-shopify text-3xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS for Animations -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Navbar Scroll Animation
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
